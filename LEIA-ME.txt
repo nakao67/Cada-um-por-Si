@@ -1,0 +1,19 @@
+CADA UM POR SI — atualização de terror + STORYBOARD
+
+Arquivos do site: index.html e admin.html. Envie os dois para a raiz do repositório GitHub Pages, substituindo os anteriores.
+
+Novidades:
+- Botão e aba STORYBOARD.
+- Visual escuro com detalhes vermelhos e degradê vermelho na parte inferior do menu; fontes mantidas.
+- Painel administrativo com seleção de fotos da galeria para publicações/Storyboard e para os perfis em CRÉDITOS.
+- As imagens e GIFs da galeria são enviados para o Cloudinary usando o Cloud name ue yg521n (sem espaço: ueyg521n) e o preset unsigned cada_um_por_si. Os links retornados são salvos no Firebase Realtime Database.
+
+IMPORTANTE: o painel usa Cloudinary para os uploads, então não precisa ativar Firebase Storage. No Cloudinary, confirme que o preset cada_um_por_si existe e está com Signing Mode = Unsigned, e limite os formatos permitidos a JPG, JPEG, PNG, WEBP e GIF. O preset unsigned pode ser usado por quem conhecer seu nome; por isso, não use o mesmo preset para arquivos sensíveis.
+
+O arquivo regras_firebase.json incluído contém regras completas do Realtime Database para /posts e /siteContent: visitantes podem ler; somente nandomatheus28@gmail.com pode escrever. Se for substituir as regras, confira se nenhum outro recurso importante do seu banco depende de regras adicionais.
+
+
+
+O arquivo admin.html já contém o Cloud name e o nome do preset fornecidos nesta conversa. O Firebase Realtime Database continua responsável por guardar as publicações e os links das imagens.
+
+CORREÇÃO EXTRA (18/10/2026): nomes de participantes com caracteres proibidos pelo Firebase (como o ponto em salgado.030) são convertidos em chaves seguras ao salvar e ao localizar fotos de perfil. Substitua index.html e admin.html no repositório GitHub pelos arquivos desta pasta.
