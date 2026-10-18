@@ -1,0 +1,22 @@
+CADA UM POR SI — SITE + PAINEL ADMINISTRATIVO
+
+Arquivos:
+- index.html: site público com botão PUBLICAÇÕES e conteúdo editável
+- admin.html: painel para publicar/editar/apagar posts e alterar rótulos/textos do site
+- regras_firebase.json: regras do Realtime Database para posts e siteContent
+
+PUBLICAÇÕES:
+- O título, texto e data/hora são salvos no Firebase.
+- Para imagem ou GIF, use um link direto HTTPS para o arquivo; GIFs animados funcionam como imagem.
+- Esta versão não faz upload de imagens do telefone para o Firebase Storage.
+
+INSTALAÇÃO NO GITHUB (Android):
+1. Abra o repositório e substitua index.html e admin.html pelos arquivos deste pacote.
+2. Faça commit na branch main. Não mude o nome do repositório.
+3. O site público fica em /Cada-um-por-Si/ e o painel em /Cada-um-por-Si/admin.html.
+4. No Firebase Realtime Database, atualize as regras usando regras_firebase.json, mantendo a autenticação Google ativada e o domínio nakao67.github.io autorizado.
+5. O e-mail administrador configurado no painel é nandomatheus28@gmail.com.
+
+SEGURANÇA:
+- Não permita escrita pública em posts ou siteContent.
+- A configuração Web do Firebase é usada no cliente; nunca publique chaves privadas ou credenciais de conta de serviço.
