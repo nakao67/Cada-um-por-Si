@@ -3,7 +3,7 @@
 // 1) Cole aqui a configuração WEB do Firebase, igual à do index.html.
 const firebaseConfig={apiKey:"AIzaSyCnaACjWdlZKXT6NjHcOIoWf_zW6jRTHGY",authDomain:"cada-um-por-si-b5fca.firebaseapp.com",databaseURL:"https://cada-um-por-si-b5fca-default-rtdb.firebaseio.com",projectId:"cada-um-por-si-b5fca",storageBucket:"cada-um-por-si-b5fca.firebasestorage.app",messagingSenderId:"487397205589",appId:"1:487397205589:web:dbdd9e90f325d189e5d6dc"};
 // 2) Troque pelo e-mail Google que terá permissão de administração.
-const ADMIN_EMAIL="Nandomatheus28@gmail.com";
+const ADMIN_EMAIL="nandomatheus28@gmail.com";
 const $=id=>document.getElementById(id);let auth=null,db=null,user=null;
 function status(s){$('status').textContent=s}function authorized(){return !!user&&user.email===ADMIN_EMAIL}
 try{if(firebaseConfig.apiKey!=="COLE_SUA_API_KEY"){firebase.initializeApp(firebaseConfig);auth=firebase.auth();db=firebase.database();auth.onAuthStateChanged(u=>{user=u;if(u){status('Conectado como '+u.email+(authorized()?' — acesso administrativo liberado.':' — este e-mail não é o administrador autorizado.'));$('login').classList.add('hidden');$('logout').classList.remove('hidden');$('editor').classList.toggle('hidden',!authorized());if(authorized())loadPosts();}else{status('Entre com a conta Google autorizada.');$('login').classList.remove('hidden');$('logout').classList.add('hidden');$('editor').classList.add('hidden');}});}else{status('Configuração do Firebase pendente: edite firebaseConfig neste arquivo.')}}catch(e){status('Erro ao iniciar Firebase: '+e.message)}
